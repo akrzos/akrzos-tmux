@@ -20,44 +20,52 @@ tmux select-pane -t 0
 # Single Pane Controllers
 tmux new-window -t $SESSIION:3 -n 'controllers'
 tmux send-keys "su - stack" C-m
-tmux send-keys "ssh overcloud-controller-0" C-m
+tmux send-keys "cd browbeat/ansible" C-m
+tmux send-keys "ssh -F ssh-config overcloud-controller-0" C-m
 tmux send-keys "sudo su -" C-m
 tmux split-window -v
 tmux select-pane -t 1
 tmux send-keys "su - stack" C-m
-tmux send-keys "ssh overcloud-controller-1" C-m
+tmux send-keys "cd browbeat/ansible" C-m
+tmux send-keys "ssh -F ssh-config overcloud-controller-1" C-m
 tmux send-keys "sudo su -" C-m
 tmux split-window -h
 tmux select-pane -t 2
 tmux send-keys "su - stack" C-m
-tmux send-keys "ssh overcloud-controller-2" C-m
+tmux send-keys "cd browbeat/ansible" C-m
+tmux send-keys "ssh -F ssh-config overcloud-controller-2" C-m
 tmux send-keys "sudo su -" C-m
 tmux select-pane -t 0
 
 # Single Pane Computes
 tmux new-window -t $SESSIION:4 -n 'computes'
 tmux send-keys "su - stack" C-m
-tmux send-keys "ssh overcloud-novacompute-0" C-m
+tmux send-keys "cd browbeat/ansible" C-m
+tmux send-keys "ssh -F ssh-config overcloud-novacompute-0" C-m
 tmux send-keys "sudo su -" C-m
 tmux split-window -v
 tmux select-pane -t 1
 tmux send-keys "su - stack" C-m
-tmux send-keys "ssh overcloud-novacompute-1" C-m
+tmux send-keys "cd browbeat/ansible" C-m
+tmux send-keys "ssh -F ssh-config overcloud-novacompute-1" C-m
 tmux send-keys "sudo su -" C-m
 tmux select-pane -t 0
 
 # Each Controller:
 tmux new-window -t $SESSIION:5 -n 'controller0'
 tmux send-keys "su - stack" C-m
-tmux send-keys "ssh overcloud-controller-0" C-m
+tmux send-keys "cd browbeat/ansible" C-m
+tmux send-keys "ssh -F ssh-config overcloud-controller-0" C-m
 tmux send-keys "sudo su -" C-m
 tmux new-window -t $SESSIION:6 -n 'controller1'
 tmux send-keys "su - stack" C-m
-tmux send-keys "ssh overcloud-controller-1" C-m
+tmux send-keys "cd browbeat/ansible" C-m
+tmux send-keys "ssh -F ssh-config overcloud-controller-1" C-m
 tmux send-keys "sudo su -" C-m
 tmux new-window -t $SESSIION:7 -n 'controller2'
 tmux send-keys "su - stack" C-m
-tmux send-keys "ssh overcloud-controller-2" C-m
+tmux send-keys "cd browbeat/ansible" C-m
+tmux send-keys "ssh -F ssh-config overcloud-controller-2" C-m
 tmux send-keys "sudo su -" C-m
 
 tmux select-window -t $SESSION:1
