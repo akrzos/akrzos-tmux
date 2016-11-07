@@ -41,13 +41,13 @@ tmux select-pane -t 0
 tmux new-window -t $SESSIION:4 -n 'computes'
 tmux send-keys "su - stack" C-m
 tmux send-keys "cd browbeat/ansible" C-m
-tmux send-keys "ssh -F ssh-config overcloud-novacompute-0" C-m
+tmux send-keys "ssh -F ssh-config overcloud-compute-0" C-m
 tmux send-keys "sudo su -" C-m
 tmux split-window -v
 tmux select-pane -t 1
 tmux send-keys "su - stack" C-m
 tmux send-keys "cd browbeat/ansible" C-m
-tmux send-keys "ssh -F ssh-config overcloud-novacompute-1" C-m
+tmux send-keys "ssh -F ssh-config overcloud-compute-1" C-m
 tmux send-keys "sudo su -" C-m
 tmux select-pane -t 0
 
