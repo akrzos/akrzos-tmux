@@ -1,8 +1,8 @@
 #!/bin/bash
-# tmux setup for use with Browbeat (3 Controllers)
-SESSION='browbeat'
-ssh_config_home='browbeat/ansible'
-compute_name='overcloud-compute'
+# tmux setup for OSE on OSP
+SESSION='akrzos'
+ssh_config_home='/home/stack/akrzos'
+compute_name='overcloud-novacompute'
 
 tmux -2 new-session -d -s $SESSION -n 'undercloud-root'
 
@@ -12,20 +12,8 @@ tmux send-keys "su - stack" C-m
 tmux send-keys ". stackrc" C-m
 
 
-# Single Pane Browbeat
-tmux new-window -t $SESSIION:2 -n 'browbeat'
-tmux send-keys "su - stack" C-m
-tmux send-keys ". browbeat-venv/bin/activate; cd browbeat" C-m
-tmux split-window -v
-tmux select-pane -t 1
-tmux send-keys "su - stack" C-m
-tmux send-keys "cd browbeat/log" C-m
-tmux send-keys "tailf debug.log" C-m
-tmux select-pane -t 0
-
-
 # Single Pane Controllers
-tmux new-window -t $SESSIION:3 -n 'controllers'
+tmux new-window -t $SESSIION:2 -n 'controllers'
 tmux send-keys "su - stack" C-m
 tmux send-keys "cd ${ssh_config_home}" C-m
 tmux send-keys "ssh -F ssh-config overcloud-controller-0" C-m
@@ -41,6 +29,34 @@ tmux select-pane -t 2
 tmux send-keys "su - stack" C-m
 tmux send-keys "cd ${ssh_config_home}" C-m
 tmux send-keys "ssh -F ssh-config overcloud-controller-2" C-m
+tmux send-keys "sudo su -" C-m
+tmux select-pane -t 0
+
+
+# Single Pane Cephs
+tmux new-window -t $SESSIION:3 -n 'Cephs'
+tmux send-keys "su - stack" C-m
+tmux send-keys "cd ${ssh_config_home}" C-m
+tmux send-keys "ssh -F ssh-config overcloud-cephstorage-0" C-m
+tmux send-keys "sudo su -" C-m
+tmux split-window -v
+tmux select-pane -t 0
+tmux split-window -h
+tmux select-pane -t 1
+tmux send-keys "su - stack" C-m
+tmux send-keys "cd ${ssh_config_home}" C-m
+tmux send-keys "ssh -F ssh-config overcloud-cephstorage-1" C-m
+tmux send-keys "sudo su -" C-m
+tmux select-pane -t 2
+tmux send-keys "su - stack" C-m
+tmux send-keys "cd ${ssh_config_home}" C-m
+tmux send-keys "ssh -F ssh-config overcloud-cephstorage-2" C-m
+tmux send-keys "sudo su -" C-m
+tmux split-window -h
+tmux select-pane -t 3
+tmux send-keys "su - stack" C-m
+tmux send-keys "cd ${ssh_config_home}" C-m
+tmux send-keys "ssh -F ssh-config overcloud-cephstorage-3" C-m
 tmux send-keys "sudo su -" C-m
 tmux select-pane -t 0
 
