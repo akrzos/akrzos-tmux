@@ -1,8 +1,8 @@
 #!/bin/bash
-# tmux setup for OSE on OSP
-SESSION='akrzos'
-ssh_config_home='/home/stack/akrzos'
-compute_name='overcloud-novacompute'
+# tmux setup for 1 UC, 3 Controllers, 4 Cephs
+SESSION='browbeat'
+ssh_config_home='browbeat/ansible'
+compute_name='overcloud-compute'
 
 tmux -2 new-session -d -s $SESSION -n 'undercloud-root'
 
