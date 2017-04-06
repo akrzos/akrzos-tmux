@@ -33,22 +33,8 @@ tmux send-keys "sudo su -" C-m
 tmux select-pane -t 0
 
 
-# Single Pane Computes
-tmux new-window -t $SESSIION:4 -n 'computes'
-tmux send-keys "su - stack" C-m
-tmux send-keys "cd ${ssh_config_home}" C-m
-tmux send-keys "ssh -F ssh-config ${compute_name}-0" C-m
-tmux send-keys "sudo su -" C-m
-tmux split-window -v
-tmux select-pane -t 1
-tmux send-keys "su - stack" C-m
-tmux send-keys "cd ${ssh_config_home}" C-m
-tmux send-keys "ssh -F ssh-config ${compute_name}-1" C-m
-tmux send-keys "sudo su -" C-m
-tmux select-pane -t 0
-
 # Single Pane Cephstorage
-tmux new-window -t $SESSIION:5 -n 'cephstorage'
+tmux new-window -t $SESSIION:4 -n 'cephstorage'
 tmux send-keys "su - stack" C-m
 tmux send-keys "cd ${ssh_config_home}" C-m
 tmux send-keys "ssh -F ssh-config overcloud-cephstorage-0" C-m
@@ -58,6 +44,21 @@ tmux select-pane -t 1
 tmux send-keys "su - stack" C-m
 tmux send-keys "cd ${ssh_config_home}" C-m
 tmux send-keys "ssh -F ssh-config overcloud-cephstorage-1" C-m
+tmux send-keys "sudo su -" C-m
+tmux select-pane -t 0
+
+
+# Single Pane Computes
+tmux new-window -t $SESSIION:5 -n 'computes'
+tmux send-keys "su - stack" C-m
+tmux send-keys "cd ${ssh_config_home}" C-m
+tmux send-keys "ssh -F ssh-config ${compute_name}-0" C-m
+tmux send-keys "sudo su -" C-m
+tmux split-window -v
+tmux select-pane -t 1
+tmux send-keys "su - stack" C-m
+tmux send-keys "cd ${ssh_config_home}" C-m
+tmux send-keys "ssh -F ssh-config ${compute_name}-1" C-m
 tmux send-keys "sudo su -" C-m
 tmux select-pane -t 0
 
