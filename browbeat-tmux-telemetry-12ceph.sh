@@ -75,7 +75,7 @@ tmux select-pane -t 0
 tmux new-window -t $SESSIION:5 -n 'Cephs'
 tmux send-keys "su - stack" C-m
 tmux send-keys "cd ${ssh_config_home}" C-m
-tmux send-keys "ssh -F ssh-config overcloud-cephstorage-0" C-m
+tmux send-keys "ssh -F ssh-config overcloud-cephstorage-4" C-m
 tmux send-keys "sudo su -" C-m
 tmux split-window -v
 tmux select-pane -t 0
@@ -83,18 +83,18 @@ tmux split-window -h
 tmux select-pane -t 1
 tmux send-keys "su - stack" C-m
 tmux send-keys "cd ${ssh_config_home}" C-m
-tmux send-keys "ssh -F ssh-config overcloud-cephstorage-1" C-m
+tmux send-keys "ssh -F ssh-config overcloud-cephstorage-5" C-m
 tmux send-keys "sudo su -" C-m
 tmux select-pane -t 2
 tmux send-keys "su - stack" C-m
 tmux send-keys "cd ${ssh_config_home}" C-m
-tmux send-keys "ssh -F ssh-config overcloud-cephstorage-2" C-m
+tmux send-keys "ssh -F ssh-config overcloud-cephstorage-6" C-m
 tmux send-keys "sudo su -" C-m
 tmux split-window -h
 tmux select-pane -t 3
 tmux send-keys "su - stack" C-m
 tmux send-keys "cd ${ssh_config_home}" C-m
-tmux send-keys "ssh -F ssh-config overcloud-cephstorage-3" C-m
+tmux send-keys "ssh -F ssh-config overcloud-cephstorage-7" C-m
 tmux send-keys "sudo su -" C-m
 tmux select-pane -t 0
 
@@ -102,7 +102,7 @@ tmux select-pane -t 0
 tmux new-window -t $SESSIION:6 -n 'Cephs'
 tmux send-keys "su - stack" C-m
 tmux send-keys "cd ${ssh_config_home}" C-m
-tmux send-keys "ssh -F ssh-config overcloud-cephstorage-0" C-m
+tmux send-keys "ssh -F ssh-config overcloud-cephstorage-8" C-m
 tmux send-keys "sudo su -" C-m
 tmux split-window -v
 tmux select-pane -t 0
@@ -110,18 +110,18 @@ tmux split-window -h
 tmux select-pane -t 1
 tmux send-keys "su - stack" C-m
 tmux send-keys "cd ${ssh_config_home}" C-m
-tmux send-keys "ssh -F ssh-config overcloud-cephstorage-1" C-m
+tmux send-keys "ssh -F ssh-config overcloud-cephstorage-9" C-m
 tmux send-keys "sudo su -" C-m
 tmux select-pane -t 2
 tmux send-keys "su - stack" C-m
 tmux send-keys "cd ${ssh_config_home}" C-m
-tmux send-keys "ssh -F ssh-config overcloud-cephstorage-2" C-m
+tmux send-keys "ssh -F ssh-config overcloud-cephstorage-10" C-m
 tmux send-keys "sudo su -" C-m
 tmux split-window -h
 tmux select-pane -t 3
 tmux send-keys "su - stack" C-m
 tmux send-keys "cd ${ssh_config_home}" C-m
-tmux send-keys "ssh -F ssh-config overcloud-cephstorage-3" C-m
+tmux send-keys "ssh -F ssh-config overcloud-cephstorage-11" C-m
 tmux send-keys "sudo su -" C-m
 tmux select-pane -t 0
 
