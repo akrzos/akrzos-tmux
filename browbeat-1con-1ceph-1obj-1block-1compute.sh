@@ -14,7 +14,7 @@ tmux send-keys ". stackrc" C-m
 # Single Pane Browbeat
 tmux new-window -t $SESSIION:2 -n 'browbeat'
 tmux send-keys "su - stack" C-m
-tmux send-keys ". browbeat-venv/bin/activate; cd browbeat" C-m
+tmux send-keys "cd browbeat; . .browbeat-venv/bin/activate" C-m
 tmux split-window -v
 tmux select-pane -t 1
 tmux send-keys "su - stack" C-m
